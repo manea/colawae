@@ -1,0 +1,14 @@
+[Unit]
+Description=CoLawAE UAE FDL 32/2021, FDL 20/2025 & CR 102/2022 Commercial Companies Readiness Studio
+After=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/colawae
+EnvironmentFile=/etc/colawae/.env
+ExecStart=/usr/bin/node --no-warnings /opt/colawae/server/index.mjs
+Restart=on-failure
+RestartSec=3
+
+[Install]
+WantedBy=default.target
